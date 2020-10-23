@@ -23,4 +23,4 @@ https://docs.oracle.com/javase/8/docs/api/
 
 ## 연산자
 > 연산에 사용할 예약된 부호들.
-[연산자 우선 순위](https://opentutorials.org/course/1223/533)
+[연산자 우선 순위](https://opentutorials.org/course/1223/5331)
