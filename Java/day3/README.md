@@ -1,4 +1,4 @@
-# 1023
+# 자바 2일차(1023)
 
 ## Constant
 > 변수를 상수처럼 사용할 때
@@ -17,5 +17,10 @@
 10진수 사용: 수를 사용
 16진수 사용: 숫자 앞에 0x를 붙인다.
 ```
+## API
+> JAVA에 탑재된 라이버리에 관한 설명서
+https://docs.oracle.com/javase/8/docs/api/
+
 ## 연산자
 > 연산에 사용할 예약된 부호들.
+[연산자 우선 순위](https://opentutorials.org/course/1223/533)
