@@ -52,6 +52,16 @@ public class UseElseIf {
 		int month = Integer.parseInt(args[1]);
 		
 		if(month%12 == 0) System.out.println("¿ø¼þÀÌ");
-		else if(month%12 == 1)System.out.println("´ß");
+			else if(month%12 == 1)System.out.println("´ß");
+			else if(month%12 == 2)System.out.println("°³");
+			else if(month%12 == 3)System.out.println("µÅÁö");
+			else if(month%12 == 4)System.out.println("Áã");
+			else if(month%12 == 5)System.out.println("¼Ò");
+			else if(month%12 == 6)System.out.println("È£¶ûÀÌ");
+			else if(month%12 == 7)System.out.println("Åä³¢");
+			else if(month%12 == 8)System.out.println("¿ë");
+			else if(month%12 == 9)System.out.println("¹ì");
+			else if(month%12 == 10)System.out.println("¸»");
+			else if(month%12 == 11)System.out.println("¾ç");
 	}
 }
