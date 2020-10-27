@@ -12,6 +12,8 @@
 ## 단일 if
 > 조건에 맞을 경우에만 코드를 실행해야 할 때
 
+**수업 코드: [단일 if](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day5/UseIf.java)**
+
 ```
     문법:
          if(조건식) {
@@ -22,6 +24,7 @@
 ## if~else문
 > 둘 중 하나의 코드가 반드시 실행 되어야할 때
 
+**수업 코드: [if~else문](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day5/UseIfElse.java)**
 ```
 	문법:
 		if(조건식) {
@@ -32,8 +35,10 @@
 		}
 ```
 
-## 다중if 문(else ~if)
+## 다중if 문(else~if)
 > 연관성있는 여러 조건을 비교해야 할 때
+
+**수업 코드: [else~if](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day5/UseElseIf.java)**
 
 ```
     문법:
@@ -53,6 +58,8 @@
 
 ## switch~case
 > 일치하는 정수를 비교할 때 사용
+
+**수업 코드: [if~else문](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day5/UseSwitchCase.java)**
 
 ```
     문법:
