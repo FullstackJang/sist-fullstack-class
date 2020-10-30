@@ -9,7 +9,7 @@
 -  **단일 for문 수업 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day7/UseFor.java)
 
 for문법
-```
+```java
     for(초기화식 ; 조건식; 증,감소식) {
         반복수행 할 문장들.....
     }
@@ -31,7 +31,7 @@ for문법
 - **while문 무한 loop 수업 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day7/InfiniterWhile.java)  
 - **do-while문 무한 loop 수업 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day7/InfiniterDoWhile.java)
 ### 무한루프
-```
+```java
     EX1)
     for( ; ; ){
 
@@ -66,7 +66,7 @@ for문법
 - **for each 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day7/ImprovementFor.java)
   
 for each문법
-```
+```java
     for(데이터형 변수명 : 배열명){ 
                     //배열명에는 List명,Set명이 올수도 있음
     }
@@ -77,7 +77,7 @@ for each문법
 - **while 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day7/UseWhile.java)
 
 while 문법
-```
+```java
     EX1)
 
     //초기값
@@ -97,7 +97,7 @@ while 문법
 - **DO-while 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/day7/UseDoWhile.java)
   
 do~while 문법
-```
+```java
     //초기값;
     do{
         반복수행 문장들;
