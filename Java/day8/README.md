@@ -182,11 +182,37 @@
       //데이터형 변수명 = 객체명.method명(값);
       //변수에 할당하거나, 연산에 참여 시킬 수 있다.
 ```
+## . Variable Argumetns (가변인자형)
+> method 호출할 때 입력하는 값을 동적으로 넣어줄 때
+- JavaSE JDK 1.5에서부터 지원되는 문법
+- parameter를 정의할 때 **"데이터형 ... 매개변수명"**의 형식을 가진다
+-  method안에서는 배열로 처리된다.
+  - 대표: System.out.printf();, System.out.format();
+- method가 여러 개의 parameter를 정의할 때 가변인자형은 가장 마지막에만 사용할 수있다.
 
-**5. 반환형 없고, 매개변수 있는 형 - 동적인 일**
+**형식**
 ```java
-      public void typeB(int i, char c){
+    접근지정자 반환형 method명(데이터형 ... 매개변수명)
+```
+**호출**
+```java
+    method명();
+    method명(값);
+    method명(값,값,,,);
+```
 
-      }
-      호출) 객체명.typeB(1,'C');
+```java
+public void va(int ... parami){
+  // ...parami 매개변수는 배열로 처리된다.
+  // (반복문을 사용하여 처음부터 끝까지 모든 값을 얻을 수 있다.)
+
+  for(int value : parami){
+    value // 입력된 모든 arguments를 사용 할 수 있다.
+  }
+
+  /*호출) va();    // arguments 없이 호출가능.
+          va(10); // argumetns 하나를 넣어 호출 가능
+          va(10,20,30,40); //arguments 여러개를 넣어 호출 가능
+  */
+}
 ```
