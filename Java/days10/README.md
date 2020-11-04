@@ -154,3 +154,27 @@
         this()를 실행 즉 Test()생성자를 실행하고 this(10)은 다시 Test(int i)를 실행
         계속 상황이 반복 한쪽은 탈출구가 있어야한다.
 ```
+
+**this keyword사용**
+```java
+    class Test{
+        int i;
+        
+        public void setI(int i){
+                this.i=i; // heap에 i에  stack에 i를 할당
+                //this는 method를 호출한 객체의 주소로 바뀐다.
+        }
+
+        public static void main(String[] args){
+                Test t = new Test();
+                t.setI(1000);
+        }//main
+    }//class
+
+
+```
+참조형 데이터형
+> 값은 메모리에 다른 곳에 생성되고, 그 시작 주소를 저장하는 데이터형
+
+- 다른 곳에 생성할려면: new가 필요
+  - new가 사용되어 값을 생성 하는 것을 객체화라고 한다. 
