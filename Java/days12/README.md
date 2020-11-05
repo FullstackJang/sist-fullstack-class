@@ -43,7 +43,7 @@
 ```java
     배열명[방의 번호];
 ```
-<img src = "https://user-images.githubusercontent.com/69107255/98198794-281fc880-1f6d-11eb-9a81-14cc6e97bdc4.JPG" width="700" >
+<img src = "https://user-images.githubusercontent.com/69107255/98247139-99379e00-1fb6-11eb-8701-9d1c2e3563cb.JPG" width="700" >
 
 ### 일차원 배열의 일괄처리 예시
 > for,while,for-each로도 할 수 있음
