@@ -13,7 +13,7 @@
 
 - 배열을 생성하면 heap에 올라가고, 모든 방의 값이 초기화된다.
 - **방의 개수** 를 구할 때 **배열명.length**
-
+-  **일차원 배열 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/days12/Array1.java)
 **작성법**
 
 1. **선언**
@@ -74,7 +74,8 @@
 - 모든 행의 열에 개수는 동일
 - 행의 개수: 배열명.length;
 - 열의 개수: 배열명[행의번호].length;
-
+-  **이차원 배열 예제 코드**  [code](-  **일차원 배열 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/days12/Array1.java))
+  
 **작성법**
 
 1. **선언**
@@ -109,7 +110,7 @@
 ```
 
 ||0열|1열|2열|3열|
-|----|----|----|----|----|
+|:----:|:----:|:----:|:----:|:----:|
 |0행|100|0|0|0|
 |1행|0|0|400|0|
 |2행|0|500|0|0|
@@ -137,6 +138,8 @@
 ### 2차원 배열의 기본형 형식의 사용
 > new 를 사용하지 않고 만드는 것
 
+**2차원 배열 기본형 형식 초기화 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/days12/Array2Init.java)
+  
 **문법**
 ```java
     데이터형[][] 배열명 = { {값,,}, {값,,}, {값,,} };
