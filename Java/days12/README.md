@@ -14,6 +14,7 @@
 - 배열을 생성하면 heap에 올라가고, 모든 방의 값이 초기화된다.
 - **방의 개수** 를 구할 때 **배열명.length**
 -  **일차원 배열 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/days12/Array1.java)
+
 **작성법**
 
 1. **선언**
@@ -74,7 +75,7 @@
 - 모든 행의 열에 개수는 동일
 - 행의 개수: 배열명.length;
 - 열의 개수: 배열명[행의번호].length;
--  **이차원 배열 예제 코드**  [code](-  **일차원 배열 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/days12/Array1.java))
+-  **이차원 배열 예제 코드**  [code](https://github.com/FullstackJang/sist-fullstack-class/blob/master/Java/days12/Array2.java)
   
 **작성법**
 
