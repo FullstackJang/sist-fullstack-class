@@ -20,11 +20,11 @@ package day1104;
  */
 public class String {
 
-	public static void main(String[] args) {
+	public static void main(java.lang.String[] args) {
 
-		String str = "ABCD";
+		java.lang.String str = "ABCD";
 		
-		String str1 = new java.lang.String("ABCD");
+		java.lang.String str1 = new java.lang.String("ABCD");
 		
 	}
 }
