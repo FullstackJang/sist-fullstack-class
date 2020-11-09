@@ -3,10 +3,12 @@
 - 면의 수:  배열명.length
 - 행의 수: 배열명[면의 번호].length
 - 열의 수: 배열명[면의 번호][행의 번호].length
-- **3차원 배열**  [code]()
-- **3차원 배열 예제 코드**  [code]()
+- **3차원 배열**  [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/Array3.java)
 
-**3차원 배열 작성법**
+- **과제 3차원 배열 예제 코드** 
+    - 과제 내용: 3차원 배열에 입력 된 점수에 `3과목 총점`,`과목별 총점`,`전체 총점`, `전체 평균`, `Java최고점수`를 Method만들어서 출력해보기 [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/Array3Score.java)
+
+### **3차원 배열 작성법**
 
 **선언**
 ```java
@@ -24,7 +26,7 @@
 ```java
     int [][][] arr = null;
 
-    arr = ne int[2][2][3];
+    arr = new int[2][2][3];
     //2행 3열짜리 배열이 2개가 있다 생각하면 됨
 ```
 **값 할당**
@@ -66,9 +68,9 @@
 - 이차원 배열형식(행과 열로 구성)
 - 행의 수: 배열명.length
 - 열의 수: 배열명[행의 번호].length
-- **가변 배열 예제 코드**  [code]()
+- **가변 배열 예제 코드**  [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/VariableArray.java)
 
-**가변배열 작성법**
+### **가변배열 작성법**
 
 **선언**
 ```java
@@ -117,3 +119,13 @@
 `extends`키워드로 `자식클래스`에서 `부모클래스`를 선택(부모 클래스는 자식클래스를 알 수 없음)<br>
 `생성자`는 상속되지 않는다.<br>
 `자식 클래스`를 생성하면 `부모 클래스`가 먼저 생성된다.
+
+**상속 수업 예제 코드1**
+- **부모 클래스 TestSuper.java**  [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/TestSuper.java)
+- **자식 클래스 TestSub.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/TestSub.java)
+---
+**상속 수업 예제 코드2**
+- **부모 클래스 Person.java**  [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/Person.java)
+- **자식 클래스 HongGilDong.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/HongGilDong.java)
+- **자식 클래스 Clark.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/Clark.java)
+- **main 클래스 UsePerson.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days14/UsePerson.java)
