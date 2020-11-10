@@ -83,7 +83,7 @@
     - SubA.java [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/SubA.java)<br>
     - Run.java(Main) [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/Run.java)<br>
 
-## method 형식
+### method 형식
 > 부모클래스의 생성자를 호출할 때 사용
 
 - 모든 클래스의 생성자의 첫 줄에는 `super();`가 생략되어 있음
@@ -111,7 +111,7 @@
     }
 ```
 
-## keyword 형식
+### keyword 형식
 - 부모 객체의 시작 주소를 저장하고 있음
 - 부모 클래스와 자식클래스가 같은 이름의 변수,method를 가지고 있는 경우 식별하여 사용할 때
 
