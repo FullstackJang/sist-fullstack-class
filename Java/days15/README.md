@@ -7,11 +7,11 @@
 - 최우선적인 호출: 자식의 method가 가장 먼저 호출
 - 규칙: 접근지정자는 달라도 되고, 반환형, method명, 매개변수는 같아야 함 
 
-**Overriding예시 코드**
-- **OverrideSuper.java**  [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/OverrideSuper.java)
-- **OverrideSub.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/OverrideSub.java)
-- **OverrideSub2.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/OverrideSub2.java)
-- **RunOverride.java (Main)** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/RunOverride.java)
+- **Overriding예시 코드**
+    - OverrideSuper.java  [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/OverrideSuper.java)
+    - OverrideSub.java [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/OverrideSub.java)
+    - OverrideSub2.java [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/OverrideSub2.java)
+    - RunOverride.java (Main) [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/RunOverride.java)
 
 ## is-a 관계
 > `부모클래스로 데이터형을 선언`하고 `자식클래스를 생성해서 할당` 하는 것
@@ -42,8 +42,8 @@
     - Overriding된 method를 명시하기 위해 method위에 `@Override`를 명시
     JDK1.5에서는 `@Override`, `@SuppressWarnings`, `@Deprecated`가 3개가 추가 
 
-**Java annotation 예시 코드**
-- **UseAnnotation.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/UseAnnotation.java)
+- **Java annotation 예시 코드**
+    - UseAnnotation.java [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/UseAnnotation.java)
 
 **@Override**
 ```java
@@ -78,10 +78,10 @@
     - `method 형식`
     - `keyword 형식`
 
-**super 예시코드**<br>
-**SuperA.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/SuperA.java)<br>
-**SubA.java** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/SubA.java)<br>
-**Run.java(Main)** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/Run.java)<br>
+- **super 예시코드**<br>
+    - SuperA.java [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/SuperA.java)<br>
+    - SubA.java [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/SubA.java)<br>
+    - Run.java(Main) [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/Run.java)<br>
 
 ## method 형식
 > 부모클래스의 생성자를 호출할 때 사용
