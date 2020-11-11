@@ -7,6 +7,17 @@
 - 최우선적인 호출: 자식의 method가 가장 먼저 호출
 - 규칙: 접근지정자는 달라도 되고, 반환형, method명, 매개변수는 같아야 함 
 
+## 상속
+> 코드의 재사용성 향상
+
+## extends
+> 자식클래스에서 부모클래스를 선택
+
+### 클래스간 계층
+- 부모 클래스: 공통 특징 정의
+- 자식 클래스: 공통특징은 부모 것을 사용 + `자신의 특징을 정의`
+
+
 - **Overriding예시 코드**
     - OverrideSuper.java  [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/OverrideSuper.java)
     - OverrideSub.java [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days15/OverrideSub.java)
