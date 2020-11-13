@@ -1,15 +1,21 @@
 # Date 클래스
-- 형식이 있는 날짜를 얻을 때 사용 하고 `SimpleDateFormat`과 같이 사용함
+- `형식이 있는 날짜를 얻을 때 사용` 하고 `SimpleDateFormat`클래스와 같이 사용함
+
+> Date클래스는 java.util.Date
 
 ## Date클래스 사용
-**객체 생성**
+
+- **Date class 예제  코드** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days18/UseDate.java)
+
+**Date 클래스 객체 생성**
 ```java
     Date d = new Date(); //시스템의 날짜정보를 저장하는 객체가 생성
 ```
 
 **java.txt package존재**
-- SimpleDateFormat 
-> 날짜 형식 제공
+>`날짜 형식 제공
+- SimpleDateFormat는 `java.text`.SimpleDateFormat
+
 1. 객체 생성
 ```java
     //객체 생성 시 형식이 설정이됨
@@ -25,25 +31,29 @@
 
 **자주 사용하는 Date and Time Patterns**
 |Letter|Date or Time Component|Presentation|Examples
-|:----|:----:|:-----:|----|
-|년|y|Year||
-|월|M|Week year	||
-|일|d|Day in month|	|
-|시|h|Hour in am/pm (1-12)	||
-|오전/오후|a|Am/pm marker||
-|분|m|Minute in hour||
-|초|s|||
-|요일|E|||
+|:----|:----:|:-----:|:----:|
+|년|y|Year|1996; 96|
+|월|M|Week year|July; Jul; 07|
+|일|d|Day in month|10|
+|시|h|Hour in am/pm (1-12)|12|
+|오전/오후|a|Am/pm marker|PM|
+|분|m|Minute in hour|30|
+|초|s|Second in minute|55|
+|요일|E|Day name in week|Tuesday; Tue|
 <br>
 <br>
 
 # Calendar 클래스
-- 단편적인 날짜 정보를 얻을 때
+- `단편적인 날짜 정보를 얻을 때`
 
 - 특징
     - 객체화가 되지 않는 클래스(abstract class)
     - is-a 관계의 객체화
     - 날짜 정보를 얻기 위해 `Constant`사용
+
+## Calendar 클래스 사용
+
+- **Claendar class 예제 코드** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days18/UseCalendar.java)
 
 **is-a관계 객체화**
 ```java
@@ -95,16 +105,16 @@
     */
 ```
 
-## 날짜 변경
+## 날짜 변경을 하고자 할 때
 ```java
     set() //사용
     cal.set(field,value);
 ```
-1. 생성
+1. **생성**
 ```java
     Calendar cal = Calendar.getInstance();
 ```
-2. 변경
+2. **변경**
 ```java
     cal.set(Calendar.YEAR,2019); // 년도 변경 2020 => 2019
 
@@ -112,17 +122,21 @@
 
     cal.set(Calender.DAY_OF_MONTH,31) // 일 변경 31
 ```
+
 # Random 클래스
 > 난수를 생성하기 위해 만들어진 클래스
 
-**사용법**
-1. 객체생성
+## Random 클래스 사용
+
+- Random class 예제 코드 [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days18/UseRandom.java)
+
+1. **객체생성**
 - 객체가 생성되었을 때 `모든 난수`가 생성되어 있음
 ```java
     Random r = new Random();
 ```
 
-2. 난수 얻기
+2. **난수 얻기**
 
 **정수의 난수**
 ```java
@@ -149,14 +163,16 @@
 **숫자 형식**
 - 출력되는 숫제에 `,`를 넣어 가독성을 향상
 
-**사용법**
-1. 객체 생성
+## DecimalFormat 클래스 사용
+-  **DecimalFormat class 예제 코드** [code](https://github.com/Jangilkyu/sist-fullstack-class/blob/master/Java/days18/UseDecimalFormat.java)
+  
+1. **객체 생성**
 ```java
     DecimalFormat df = new DecimalFormat("pattern"); 
     // #패턴은 값이 있을때에만 출력
     // 0패턴은 값이 있다면 값을 출력하고 값이 없다면 0을 출력
 ```
-2. 형식에 따른 문자열을 얻기
+2. **형식에 따른 문자열을 얻기**
 ```java
     df.format("정수 or 실수");
     //형식에 대한 문자열이 리턴
