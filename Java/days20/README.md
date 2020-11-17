@@ -27,22 +27,6 @@
 - 속도가 느리다.
 - 만들기 쉽다.
 
-## Swing(AWT2라고 함)
-> 디자인이 강조된 윈도우 프로그램을 만들 때 사용
-
-- **특징**
-    - 이미지를 다루기 쉽다.
-    - Error가 적다.
-    - 속도가 빠르다.
-    - 만들기 어렵다.(MVC Pattern이 적용된 Component가 존재)
-
-- Component Programming
->기능을 가진 최소한의 단위
-
-- 보여주거나 일을 수행할 수 있는 단위
-- exe파일을 만들 수 없음
-- 그래픽 성능이 많이 떨어진다.
-
 **Component 종류**
 
 ##  window Component
@@ -115,3 +99,20 @@ windows Programming
         new MyWin();
     }
 ```
+
+
+## Swing(AWT2라고 함)
+> 디자인이 강조된 윈도우 프로그램을 만들 때 사용
+
+- **특징**
+    - 이미지를 다루기 쉽다.
+    - Error가 적다.
+    - 속도가 빠르다.
+    - 만들기 어렵다.(MVC Pattern이 적용된 Component가 존재)
+
+- Component Programming
+>기능을 가진 최소한의 단위
+
+- 보여주거나 일을 수행할 수 있는 단위
+- exe파일을 만들 수 없음
+- 그래픽 성능이 많이 떨어진다.
