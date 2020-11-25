@@ -6,7 +6,7 @@
 - Swing 컴포넌트는 AWT의 이벤트 처리 객체를 사용
 
 |이벤트 종류|처리 리스너(interface)|주 적용 Component|
-|:----|:----:|:----:|:----:|
+|:----|:----:|:----:|
 |**액션이벤트**<br>(버튼을 클릭, Text Component에서 Enter가 눌렸을 때)|ActionListener|Button, Text Component|
 |윈도우 이벤트<br>(Window Component에만 처리)|WindowListener|Frame, Window, Dialog|
 |**키보드 이벤트**<br>(키의 입력(Text-Component)이 가능한 Component)|KeyListener|TextField, JTextField, JPasswordField,JTextArea|
