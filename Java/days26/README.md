@@ -25,26 +25,44 @@
 
 <img src = "https://user-images.githubusercontent.com/69107255/100623761-f16b8100-3365-11eb-9135-2bd6c76be073.png">
 
-## stream은 생성되어있으면 memory를 계속 소모한다.
-- 메모리 누수(memory leak)
-
-사용이 끝난 스트림은 누수를 막기 위해서 반드시 연결을 끊어야 한다.
-* System 클래스에서 제공하는 표준 스트림은 끊지 않는다.
-
 
 # **입력의 근원 시스템(키보드 입력)**
 <img src = "https://user-images.githubusercontent.com/69107255/100623932-28da2d80-3366-11eb-8985-f4977e90eb98.png">
 
 <img src ="https://user-images.githubusercontent.com/69107255/100624732-13b1ce80-3367-11eb-9b38-e6605a982569.png">
 
-## Charst: 문자집합
-- 완성형(모든 글자가 만들어져 있는 문자 집합)
-- 8859_1 : 1byte
-- KSC5601: 2byte 국내표준
-- EUC-KR : 2byte 국제표준 // 아햏햏,뷁,섊 이런 단어가 없음
-- MS949
-- UTF-8
+- 영어 1자 1byte(8859_1)
+- 한글 1자 2byte
 
+- 한글 1자 2byte : KSC5601, EUC-KR, MS949 
+- 한글 1자 3byte : UTF-8
 
-## 조합형
-- 자음코드와 모음코드를 조합하여 문자를 표현하는 문자 집합
+```java
+//키보드의 입력을 받기위해서는 JVM이 연결한 System.in Stream을 사용해야한다.
+
+try{
+    int inputCode=System.in.read();
+}catch(IOException ie){
+
+}
+```
+<img src = "https://user-images.githubusercontent.com/69107255/100626843-a6ec0380-3369-11eb-9d87-cb4afa02d774.png">
+
+<img src = "https://user-images.githubusercontent.com/69107255/100627076-e87cae80-3369-11eb-9453-7cfe16063421.png">
+
+```java
+- BufferedReader- 줄 단위로 읽기 : readLine()
+- InputStreamReader – 8bit와 16bit 스트림을 연결.
+//8bit스트림과 16bit 스트림 연결
+
+InputStreamReader isr=new InputStreamReader( System.in );
+//줄 단위로 읽어들이는 기능을 가진 스트림 연결
+BufferedReader br=new BufferedReader( isr );
+String str=br.readLine();
+```
+
+## **stream은 생성되어있으면 memory를 계속 소모한다.**
+> 메모리 누수(memory leak)
+
+- 사용이 끝난 스트림은 누수를 막기 위해서 반드시 연결을 끊어야 한다.
+    * System 클래스에서 제공하는 표준 스트림(System)은 끊지 않는다.
