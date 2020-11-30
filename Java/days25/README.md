@@ -56,7 +56,7 @@ try~catch, throws, throw를 사용하여 예외를 처리
     - 자세한 이유 출력 : printStackTrace(); //출력까지 같이 해주는 method ->너무 자세하게 나와서 사용자한테는 절대 보여주면 안됨
 
 
-# 컴파일 에외
+# 컴파일 예외
 - 객체(instance) 복제(동일한 값을 가진 객체를 하나 더 만드는 것)될 수 없다.
 - 객체가 복제 될려면 타입체크(Cloneable : 형을 체크)가 되어야 한다.
 - 객체를 복제할 때에는 Ojbect에서 제공하는 clone()를 사용한다.
@@ -108,3 +108,11 @@ try~catch, throws, throw를 사용하여 예외를 처리
         throw new Exception();
     }
 ```
+
+# 사용자정의 예외 처리 클래스
+- java에서 제공되는 예외처리 클래스가 현재 업무상황에 맞지 않을 때
+- 개발자가 현재 업무상황에 맞는 예외처리 클래스를 만드는 것
+
+- Compile 예외를 만들 때 : Exception 상속
+- Runtime 예외를 만들 때 : RuntimeException 상속
+
