@@ -9,7 +9,8 @@ FileStream사용
 # FileOutputStream
 
 1. **생성**
-같은 이름의 파일이 존재하면 덮어쓰고, 같은 이름의 파일이 없다면 파일만 생성(폴더는 생성하지 못한다.)
+
+  같은 이름의 파일이 존재하면 덮어쓰고, 같은 이름의 파일이 없다면 파일만 생성(폴더는 생성하지 못한다.)
 ```java
     FileOutputStream fos = new FileOutputStream();
 ```
@@ -21,7 +22,7 @@ FileStream사용
 
 3. 스트림기록된 내용을 목적지로 **분출**한다.
 ```java
-    fos.flusth();
+    fos.flush();
 ```
 
 4. 스트림의 연결 끊기(가장중요. Flush를 하지않아도 close를 하면 stream에 내용이 분출되고 연결이 끊어진다.)
@@ -131,7 +132,7 @@ FileStream사용
 - 역직렬화(Unmarshalling) - 쪼개진 객체를 원래의 상태로 만드는 것
 - 모든 객체는 Stream을 타고 외부 JVM외부로 나갈 수 없다.(보안과 객체크기를 모르기 때문)
 - 기본형데이터형은 JVM을 타고 JVM외부로 나갈 수 있다.
-    - (transien	직렬화 방지키워드(IO Stream)을 타고 나가지 못하도록 막는 일을 함)
+    - (transient 직렬화 방지키워드(IO Stream)을 타고 나가지 못하도록 막는 일을 함)
 - 객체를 읽을 때 `ObjectInputStream`, 객체를 내보낼 때 `ObjectOutputStream`을 사용
 - 객체가 Stream을 타고 JVM외부로 나갈려면 `java.io.Searializable`인터페이스를 구현해야한다.
 
@@ -140,7 +141,8 @@ FileStream사용
 1. 직렬화가 가능한 객체 생성
 ```java
     public class Test implements Serializable {
-            값
+
+            private transient String str; //String은 참조형데이터형이고,Serializable을 구현하고 있지만, 접근지정자에 transient가 붙어있으면 외부로 나가지 못한다. 
 
     }
 ```
@@ -153,7 +155,7 @@ FileStream사용
 3. 객체를 스트림 기록
 ```java
     Test t = new Test();
-    oos.writeObject(t); //직렬화가 되어서 스트림까지밖에 안써진다.
+    oos.writeObject(t); //직렬화가 되어서 스트림에 기록된다.
 ```
 
 4. 스트림에 직렬화되어 저장된 객체를 **목적지**로 분출
