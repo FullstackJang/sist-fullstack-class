@@ -21,23 +21,15 @@ Open Systems Interconnection Reference Model
 |물리계층(Physical Layer)|media로 연결(유/무선)|
 
 # Protocol(전송규약)
-> 데이터를 정송하기위해 미리 정의해둔 형식
-자바에서는 TCP와 UDP를 사용할 수 있음
+> 데이터를 정송하기위해 미리 정의해둔 형식 자바에서는 TCP와 UDP를 사용할 수 있음
 
 # **TCP(Transmission Control Protocol) : java.net.Socket, ServerSocket**
 - 전화로 많이 비교
 - 속도 느리다.(체크 - 오류 검출)
-- 한 번에 전송하는 크기가 일정하다.(1Packet : 8bit)
-- 과금이 편하다.
+- 한 번에 전송하는 `크기가 일정하다.`(1Packet : 8bit) 따라서 과금이 편하다.
 - 데이터 전달이 확실하다.
 - 금융,웹 사이트
 netstat -ao
-## **Java Network 프로그램**
-java.net 패키지에 관련 클래스가 제공
-- TCP / UDP 프로토콜을 사용하는 프로그램만 작성할 수 있다.
-  - (Protocol 자체의 개발은 자바에서 할 수 없다.)
-- Socket 프로그램(컴퓨터끼리 연결만 수행: 데이터를 주고 받기위해서는 IOStream을 사용)
-
 
 # **UDP(User Datagram Protocol) : java.net.DatagramPacket, DataGramSocket**
 - 우편으로 많이 비교
@@ -45,3 +37,12 @@ java.net 패키지에 관련 클래스가 제공
 - 패킷의 크기를 개발자가 설정할 수 있다.(과금이 어렵다.)
 - 데이터가 전달되지 않을 수 있다.(패킷이 꼬일 수 있다.)
 - 화상채팅,영상,게임 보낼 때 주로 사용
+
+# **Java Network 프로그램**
+> 정의: 컴퓨터끼리 연결하는 프로그램`
+
+java.net 패키지에 관련 클래스가 제공
+- TCP / UDP 프로토콜을 사용하는 프로그램만 작성할 수 있다.
+  - (Protocol 자체의 개발은 자바에서 할 수 없다.)
+- `Socket 프로그램`: 컴퓨터끼리 연결만 수행: 데이터를 주고 받기위해서는 `IOStream`을 사용
+- 자바에서는 전송계층 까지만 할수있음
