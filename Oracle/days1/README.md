@@ -126,7 +126,7 @@
 |문자열 - 가변길이형|varchar2|4000byte문자(영문자로 4000자)|컬럼명 varchar2(크기)|
 |날짜|date||컬럼명 date(현재 날짜를 추가할 때에는 sysdate사용)|
 |긴 숫자<br>(숫자22자 이상)|long|2GByte|컬럼명 long<br>입력되는 숫자까지 저장된다.|
-|긴 문자열|clbo|4GByte|컬럼명 clob|
+|긴 문자열|clob|4GByte|컬럼명 clob|
 |파일|blob|4GByte|컬럼명 blob|
 
 ## **number**
