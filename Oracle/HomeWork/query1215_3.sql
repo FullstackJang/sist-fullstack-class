@@ -4,7 +4,7 @@ create table celeb(
 	name varchar2(15),
 	addr varchar2(150),
 	age number(3),
-	blood char(2),
+	blood varchar2(2),
 	gender char(3), /*한글 '남'or'여' 1자당 3byte*/
 	input_date date
 

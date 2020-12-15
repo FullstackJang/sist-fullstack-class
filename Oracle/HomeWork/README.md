@@ -19,7 +19,7 @@ create table celeb(
 	name varchar2(15),
 	addr varchar2(150),
 	age number(3),
-	blood char(2), // 혈액형 A형 AB형 2byte필요
+	blood varchar2(2), // 혈액형 A형 AB형 2byte필요 고정길이형 선언 시 조회 시 1byte의 공백 때문에 검색이 안될 수 있으므로 varchar2
 	gender char(3), /*한글 '남'or'여' 1자당 3byte*/
 	input_date date
 
