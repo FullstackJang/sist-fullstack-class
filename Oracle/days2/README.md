@@ -207,6 +207,6 @@ sqlplus dos환경에서는 비정상 종료하면 commit을 자동적으로 해�
 |논리 연산자|`and`**,** `or`**,** `not`|
 |문자열 비교|`like`**,** `%`**,** `_`|
 |null 비교연산자|`is null`**,** `is not null`|
-|범위 연산자|`between 값 and 값`|
+|범위 연산자|컬럼명 `between 값 and 값`|
 |문자열 붙임연산자<br>(select문의 검색 컬럼에 사용할 수 있다.)|, ` || ` ,|
 
