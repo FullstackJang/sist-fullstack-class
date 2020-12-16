@@ -13,7 +13,7 @@
 '이미주','수원시 영통구 망포동', 27,'B','여', 현재날짜
 ```
 **테이블 생성**
-```
+```sql
 create table celeb(
     
 	name varchar2(15),
@@ -36,7 +36,7 @@ create table celeb(
 # 숙제2. 
 `숙제 1`에 `insert 된 모든 레코드의 컬럼`을 `조회`하세요.
 
-```
+```sql
 select * from celeb;
 ```
 
@@ -54,14 +54,14 @@ where  name = '차은우이';
 
 # 숙제4. 
 - `work_4`라는 `이름의 저장점`을 `생성`해 보세요.
-```
+```sql
 savepoint work_4;
 ```
 
 # 숙제 5.
 위의 `정보`에서 `'차은우이'` 를 찾아 `레코드를  삭제`하세요.
 
-```
+```sql
 delete from celeb
 where name = '차은우이';
 ```
@@ -72,14 +72,14 @@ where name = '차은우이';
 # 숙제6. 
 `숙제5`에서 `삭제한 작업만 취소`하세요.
 
-```
+```sql
 rollback to work_4;
 ```
 
 
 # 숙제 7.
  위의 `테이블`의 `모든 레코드`를 `절삭`하세요.
- ```
+ ```sql
  truncate table celeb;
 ```
 
@@ -88,7 +88,7 @@ rollback to work_4;
 # 숙제 8.
  위의 `숙제테이블 자체`를 `삭제`하세요.
 
- ```
+ ```sql
  drop table celeb;
 ```
 
@@ -102,6 +102,6 @@ rollback to work_4;
 # 숙제 10. 
 휴지통을 비워보세요.
 
-```
+```sql
 purge recyclebin;
 ```
