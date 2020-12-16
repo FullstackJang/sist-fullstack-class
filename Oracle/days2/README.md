@@ -16,14 +16,14 @@
 **insert문법 2가지 (입력되는 값은 반드시 Table의 컬럼 순서대로 입력해야 된다.)**
 
 - **컬럼명을 생략하여 사용**
- ```   
+ ```sql
     insert into 테이블명 values(값,,,,);
 ```
 - **컬럼명을 명시하여 사용(권장)**
     - 입력되는 값은 컬럼의 순서와 상관 없이 입력가능
     - 명시되지 않은 컬럼에는 `null(숫자도 문자열도 아닌 사용할 수 없는 값)`이 들어간다.
 
-```
+```sql
 insert into 테이블명(컬럼명,,,) values(값,,,,);
 ```
 
@@ -71,7 +71,7 @@ insert into 테이블명(컬럼명,,,) values(값,,,,);
 - commit되기 전의 데이터는 다른 접속자(sqlplus,golden) 세션에서 사용할 수 없다.
 
 **커밋 문법**
-```
+```sql
     commit
 ```
 
@@ -85,11 +85,11 @@ insert into 테이블명(컬럼명,,,) values(값,,,,);
 
 **savepoint 문법**
 - `insert`**,**`update`**,**`delete`(transaction 대상쿼리문)가 실행되기 전에 설정한다.
-```
+```sql
     savepoint 저장점명;
 ```
 
-```
+```sql
     savepoint a;
     insert into ...;
     savepoint b;
@@ -111,7 +111,7 @@ insert into 테이블명(컬럼명,,,) values(값,,,,);
 rollack;
 ```
 
-```
+```sql
     rollback to 저장점명;
 ```
 
@@ -127,7 +127,7 @@ sqlplus dos환경에서는 비정상 종료하면 commit을 자동적으로 해�
 - `set`은 변경할 값에 대한 설정
 - `where`절은 `조건` 
     - 조건에 일치하는 모든 레코드의 컬럼 값을 변경한다. (0~n건 행이 변경)
-```
+```sql
     update 테이블명
     set    컬럼명 = 변경할 값, 컬럼명 = 변경할 값 , , , 
     where  컬럼명 = 기준값
@@ -142,12 +142,14 @@ sqlplus dos환경에서는 비정상 종료하면 commit을 자동적으로 해�
 
 **delete 문법**
 - **모든 레코드를 삭제**
-```
+
+```sql
     delete from 테이블명;
 ```
 
 - **2.조건에 맞는 레코드를 삭제**
-```
+
+```sql
     delete from 테이블명
     where 컬럼명=삭제할 값;
 ```
@@ -160,7 +162,7 @@ sqlplus dos환경에서는 비정상 종료하면 commit을 자동적으로 해�
     - **특정행**만 절삭할 수 없다.
 
 **truncate 문법**
-```
+```sql
     truncate table 테이블명;
 ```
 
@@ -171,12 +173,12 @@ sqlplus dos환경에서는 비정상 종료하면 commit을 자동적으로 해�
 - 테이블 삭제
 
 **drop 문법**
-```
+```sql
     drop 대상 대상명;
 ```
 
 **테이블 삭제**
-```
+```sql
     drop table 테이블명;
 ```
 
@@ -185,15 +187,15 @@ sqlplus dos환경에서는 비정상 종료하면 commit을 자동적으로 해�
 - 휴지통 옵션
     - **휴지통 보기(show명령어는 SQLPlus에서 제공하는 문장이다. 따라서, tool에서 지원하지 않으면 사용 불가(골드는 사용 불가))**
     - `삭제전 이름`,`휴지통으로 이동된 이름의 정보`가 보여진다.)
-    ```
+    ```sql
         show recyclebin;
     ```
     - **휴지통 비우기**
-    ```
+    ```sql
         purge recyclebin; //객체가 완전히 지워진거고, 복구가 안된다.
     ```
     - **복구 하기(같은 이름의 테이블이 생성되어 있다면 복구할 수 없다.)**
-    ```
+    ```sql
         flashback table 테이블명 to before drop;
     ```
 
