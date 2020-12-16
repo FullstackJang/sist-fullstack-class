@@ -15,7 +15,7 @@
 **테이블 생성**
 ```
 create table celeb(
-
+    
 	name varchar2(15),
 	addr varchar2(150),
 	age number(3),
@@ -28,8 +28,6 @@ create table celeb(
     insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('차은우', '인천시 미추홀구 미추홀동', 28, 'O','남',sysdate);
     insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('차은우이', '서울시 종로구 종로동', 30, 'A', '남', sysdate);
     insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('이미주', '수원시 영통구 망포동', 27, 'B', '여', sysdate);
-
-
 );
 ```
 

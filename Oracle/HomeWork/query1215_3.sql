@@ -1,13 +1,11 @@
 --1
 create table celeb(
-
 	name varchar2(15),
 	addr varchar2(150),
 	age number(3),
 	blood varchar2(2),
 	gender char(3), /*한글 '남'or'여' 1자당 3byte*/
 	input_date date
-
 );
 
 insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('공유', '경기도 파주시', 26,'A','남',sysdate);
