@@ -1,107 +1,84 @@
-
-- 학원생들에 데이터였지만 개인정보보호법에 준수하여 가상의 이름으로 변경.
-- 해당 데이터는 및 sql 쿼리문에 있는 정보들은 **가짜데이터**임
+- 별도의 테이블이 언급되지 않으면 사원테이블에서 작업을 수행한다.
+<img src = "https://user-images.githubusercontent.com/69107255/102350657-8e761d00-3fe8-11eb-987a-82ba54ee6a5f.png">
 
 # 숙제 1.
-- 아래와 같은 데이터를 저장할 수 있는 `테이블을 생성`하고 `데이터를 추가`하세요.<br>
-( 추가되는 데이터를 보고 `컬럼의 데이터형`과 `크기`를 결정할 것.) 
-```
-'공유,'경기도 파주시', 26,'A','남', 현재날짜
-'류수정','서울시 동대문구 동대문동', 24,'AB','여', 현재날짜
-'차은우','인천시 미추홀구 미추홀동', 28,'O','남' 현재날짜
-'차은우이','서울시 종로구 종로동', 30,'A','남', 현재날짜
-'이미주','수원시 영통구 망포동', 27,'B','여', 현재날짜
-```
-**테이블 생성**
-```
-create table celeb(
-    
-	name varchar2(15),
-	addr varchar2(150),
-	age number(3),
-	blood varchar2(2), // 혈액형 A형 AB형 2byte필요 고정길이형 선언 시 조회 시 1byte의 공백 때문에 검색이 안될 수 있으므로 varchar2
-	gender char(3), /*한글 '남'or'여' 1자당 3byte*/
-	input_date date
+- 연봉이 1300초과 3000 미만인 모든 사원의 `사원번호`, `사원명`,`입사일`,`연봉`을 `조회`할 것.
 
-    insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('공유', '경기도 파주시', 26,'A','남',sysdate);
-    insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('류수정', '서울시 동대문구 동대문동', 24, 'AB','여', sysdate);
-    insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('차은우', '인천시 미추홀구 미추홀동', 28, 'O','남',sysdate);
-    insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('차은우이', '서울시 종로구 종로동', 30, 'A', '남', sysdate);
-    insert into celeb(NAME, ADDR, AGE, BLOOD, GENDER, INPUT_DATE) values ('이미주', '수원시 영통구 망포동', 27, 'B', '여', sysdate);
-);
+
+```sql
+SELECT empno, ename, hiredate, sal
+FROM  emp
+WHERE sal between 1301 and 2999;
 ```
 
-<img src ="https://user-images.githubusercontent.com/69107255/102195546-0fa6b480-3f02-11eb-9c9f-4be26c1897a4.png">
+<img src = "https://user-images.githubusercontent.com/69107255/102348168-d2672300-3fe4-11eb-9aa2-e5ce1ad0579a.png">
 
-# 숙제2. 
-`숙제 1`에 `insert 된 모든 레코드의 컬럼`을 `조회`하세요.
+# 숙제 2.
+ - 직무가 CLERK, SALESMAN,ANALYST 인 사원의 `사원번호`,`직무`, `사원명`, `연봉`, `월급`, `실수령액`을 조회하세요.
+- 단, 월급은 연봉을 12로 나눈 값을 조회하고, 실수령액은 연봉에서 세금 3.3%을 제외한 금액으로조회한다. 
 
+```sql
+SELECT empno, job, ename, sal, sal/12 MONTH_SAL, sal/12 - ((sal/12)*0.033) after_tax
+FROM emp
+WHERE  job='CLERK' or job = 'SALESMAN' or job = 'ANALYST';
 ```
-select * from celeb;
-```
 
-<img src = "https://user-images.githubusercontent.com/69107255/102196998-eedf5e80-3f03-11eb-8355-fd5949802248.png">
+<img src = "https://user-images.githubusercontent.com/69107255/102351065-2ffd6e80-3fe9-11eb-9821-3d8f499c0fc3.png">
 
 # 숙제 3.
-- 위의 정보에서 `이름`이 `'차은우이'`를 찾아 `주소`를 `'서울시 종로구 경복궁'`
-으로 `나이`를 `45세`로 `변경`하세요. 
-```
-update celeb
-set    age = 47, addr = '서울시 종로구 경복궁'
-where  name = '차은우이';
-```
-<img src = "https://user-images.githubusercontent.com/69107255/102197141-17ffef00-3f04-11eb-9a10-f95f91c5e7fe.png">
+-  연봉이 2000~3000 사이이면서 부서가 10번이 아닌 부서에 근무하는 사원의 사원번호, 사원명,부서번호,연봉, 직무, 입사일을 조회하세요.
 
-# 숙제4. 
-- `work_4`라는 `이름의 저장점`을 `생성`해 보세요.
-```
-savepoint work_4;
+```sql
+SELECT empno, ename, deptno, sal, job, hiredate
+FROM emp
+WHERE (sal between 2000 and 3000) and deptno not in 10;
 ```
 
-# 숙제 5.
-위의 `정보`에서 `'차은우이'` 를 찾아 `레코드를  삭제`하세요.
+<img src = "https://user-images.githubusercontent.com/69107255/102349186-4c4bdc00-3fe6-11eb-8784-516f254b5919.png">
 
-```
-delete from celeb
-where name = '차은우이';
-```
+# 숙제4.
+- 사원명에 'A'가 있거나, 'S'가 있으면서 연봉을 1200보다 많이 받는 사원의 사원번호, 사원명, 연봉, 직무, 부서번호, 입사일을 조회하세요.
 
-<img src = https://user-images.githubusercontent.com/69107255/102197368-63b29880-3f04-11eb-8423-0b18b74e8d09.png>
-
-
-# 숙제6. 
-`숙제5`에서 `삭제한 작업만 취소`하세요.
-
-```
-rollback to work_4;
+```sql
+SELECT	empno, ename, sal, job, deptno, hiredate
+FROM   emp
+WHERE (ename like '%A%' or ename like '%S%') and sal > 1200;
 ```
 
+<img src = "https://user-images.githubusercontent.com/69107255/102349432-ac428280-3fe6-11eb-8e6f-224763e53ac2.png">
+
+# 숙제5. 
+- 사원 테이블에서 매니저가 있는 사원의 `사원번호`, `사원명`, `연봉`, `입사일` `조회`하여 아래의 형식으로 출력하고 `컬럼명을 대소문자 구분`하여 `Output`으로설정하세요.
+    - xxx(사원번호)님 xxx에 입사하셨으며 현재 연봉 xxx원 입니다.      
+
+```sql
+SELECT '[' || empno || ']님' || hiredate || '에 입사하셨으며 현재 연봉 ' || sal || '입니다.' "Output"
+FROM  emp
+WHERE mgr is not null;
+```
+
+<img src = "https://user-images.githubusercontent.com/69107255/102351306-8e2a5180-3fe9-11eb-82b4-aa9937169851.png">
+
+
+# 숙제 6. 
+- `사원 테이블`에서 `7698`,`7566`,`7902`, `매니저가 관리하지 않는 사원`의 `사원번호`, `사원명`, `직무`,`연봉`, `보너스` , `부서번호`를 `조회`하세요.
+
+```sql
+SELECT empno, ename, job, sal, comm, deptno
+FROM emp
+WHERE mgr not in(7698,7566,7902);
+```
+
+<img src = "https://user-images.githubusercontent.com/69107255/102349768-32f75f80-3fe7-11eb-9239-d6a21215f8b8.png">
 
 # 숙제 7.
- 위의 `테이블`의 `모든 레코드`를 `절삭`하세요.
- ```
- truncate table celeb;
+- `사원 테이블`에서 `모든 사원`의 `사원번호`, `사원명`, `직무`, `연봉`, `내년 연봉`을 `조회`하세요.
+- 단, 내년연봉은 현재연봉보다10% 인상된 금액으로 연산하여 조회할 것.
+
+```sql
+SELECT empno, ename, job, sal*(1+0.1/1.0) "Next_Years_Salary"
+FROM emp;
+SELECT * from emp;
 ```
 
-<img src = "https://user-images.githubusercontent.com/69107255/102197730-e2a7d100-3f04-11eb-8b40-881ddfff76d1.png">
-
-# 숙제 8.
- 위의 `숙제테이블 자체`를 `삭제`하세요.
-
- ```
- drop table celeb;
-```
-
-# 숙제 9.
-- `삭제된 테이블`을 `휴지통`에서 `확인`해보세요.
-    - SQLPlus문법 이므로 tool에 따라서 안될 수도 있다.
-
-<img src = "https://user-images.githubusercontent.com/69107255/102198336-9a3ce300-3f05-11eb-9a40-a06a52d67b9c.png">
-
-
-# 숙제 10. 
-휴지통을 비워보세요.
-
-```
-purge recyclebin;
-```
+<img src = "https://user-images.githubusercontent.com/69107255/102350420-3e975600-3fe8-11eb-8f5e-cc4501eb3480.png">

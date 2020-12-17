@@ -1,37 +1,40 @@
---1
-SELECT empno, ename, hiredate, sal
-FROM  emp
-WHERE sal between 1301 and 2999;
-
-
---2
-
-SELECT empno, job, ename, sal, sal/12 MONTH_SAL, sal/12 - ((sal/12)*0.033) after_tax
-FROM emp
-WHERE  job='CLERK' or job = 'SALESMAN' or job = 'ANALYST';
-
---3
-SELECT empno, ename, deptno, sal, job, hiredate
-FROM emp
-WHERE (sal between 2000 and 3000) and deptno not in 10;
-
---4
-SELECT	empno, ename, sal, job, deptno, hiredate
-FROM   emp
-WHERE (ename like '%A%' or ename like '%S%') and sal > 1200;
-
---5
-SELECT '[' || empno || ']님' || hiredate || '에 입사하셨으며 현재 연봉 ' || sal || '입니다.' "Output"
-FROM  emp
-WHERE mgr is not null;
-
---6
-SELECT empno, ename, job, sal, comm, deptno
-FROM emp
-WHERE mgr not in(7698,7566,7902);
-
---7
-SELECT empno, ename, job, sal*(1+0.1/1.0) "Next_Years_Salary"
+-- 1
+SELECT empno, ename, hiredate, sal, ROUND(sal/12,1) "Month Salary"
 FROM emp;
 
-select * from emp;
+-- 2
+SELECT empno, ename, hiredate, sal, NVL(TRUNC((sal+comm)*0.033,-1),TRUNC(sal - sal*0.033,-1)) "Total_Money"
+FROM emp
+WHERE TO_CHAR(TO_DATE(hiredate,'yyyy-mm-dd'),'mm') = 12;
+
+-- 3
+SELECT empno, mgr, TO_CHAR(hiredate,'yy-mm-dd q day'), sal, LOWER(ename), INITCAP(job)
+FROM  emp
+WHERE (deptno = 10 or deptno = 30) and mgr is not null;
+
+-- 4
+CREATE TABLE patient (
+	patient_num number(5),
+	patient_name char(9),
+	patient_ssn char(42)
+);
+
+--4
+INSERT INTO patient(patient_num, patient_name, patient_ssn) VALUES(12345,'류수정','880101-1234567');
+INSERT INTO patient(patient_num, patient_name, patient_ssn) VALUES(4326,'이나은','980101-2234567');
+INSERT INTO patient(patient_num, patient_name, patient_ssn) VALUES(51,'강호동','991217-1234567');
+INSERT INTO patient(patient_num, patient_name, patient_ssn) VALUES(98762,'이수근','991212-1234567');
+INSERT INTO patient(patient_num, patient_name, patient_ssn) VALUES(961,'박서준','001212-4234567');
+
+-- 5
+SELECT patient_name,SUBSTR(patient_ssn,1,instr(patient_ssn,'-')-1) front_ssn, CASE WHEN TO_CHAR(MOD(TO_NUMBER(SUBSTR(patient_ssn,8,1)),2)) = 0  THEN '여자'
+                                                                               		 ELSE '남자'
+																																									 END GENDER, CONCAT('l_',LPAD(patient_num,8,0)) "Patient_Num"
+FROM patient;
+
+--6
+UPDATE patient
+SET  patient_ssn = '991212-2234567'
+WHERE patient_name = '이수근';
+
+select * from patient;
