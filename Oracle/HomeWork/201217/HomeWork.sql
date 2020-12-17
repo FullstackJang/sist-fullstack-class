@@ -1,5 +1,7 @@
+
+select * from emp;
 -- 1
-SELECT empno, ename, hiredate, sal, ROUND(sal/12,1) "Month Salary"
+SELECT empno, ename, hiredate, sal, ROUND(sal/12,0) "Month Salary"
 FROM emp;
 
 -- 2
@@ -29,7 +31,7 @@ INSERT INTO patient(patient_num, patient_name, patient_ssn) VALUES(961,'박서준',
 -- 5
 SELECT patient_name,SUBSTR(patient_ssn,1,instr(patient_ssn,'-')-1) front_ssn, CASE WHEN TO_CHAR(MOD(TO_NUMBER(SUBSTR(patient_ssn,8,1)),2)) = 0  THEN '여자'
                                                                                		 ELSE '남자'
-																																									 END GENDER, CONCAT('l_',LPAD(patient_num,8,0)) "Patient_Num"
+																																									 END GENDER, CONCAT('I_',LPAD(patient_num,8,0)) "Patient_Num"
 FROM patient;
 
 --6
