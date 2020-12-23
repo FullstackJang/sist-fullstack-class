@@ -77,3 +77,23 @@
 
 ## **union all**
 > 중복 데이터가 존재하더라도 모두 출력한다.
+
+# EXITS()
+> 서브쿼리에서 조회 결과가 없을때 바깥 서브쿼리의 실행을 막기
+
+- WHERE절 `exits 함수`를 사용하면 조회결과가 있을 때에만 외부 쿼리가 실행된다.
+- `EXITS()함수`내의 쿼리결과를 사용하지 않고, 조회 레코드가 있는지 없는지만 판단 
+- `EXITS()`를 통해 바깥 쿼리를 실행 할건지 안할건지 결정 할수 있다.
+```sql
+
+        SELECT
+        FROM
+        WHERE EXITS(조회 쿼리)
+```
+
+```sql
+    WHERE EXISTS( SELECT empno FROM emp WHERE to_char(hiredate,'yyyy')='1983')
+
+    -- 1983년에 입사한 사람이 있으면 바깥쿼리를 실행해줘
+    -- 1983년에 입사한 사람이 있으면 조건이 TRUE가 되고  없다면 FALSE가 된다. 
+```
