@@ -18,14 +18,14 @@
 
 1. **드라이버로딩**
 ```java
-   Class.forName(“oracle.jdbc.OracleDriver”);
+   Class.forName("oracle.jdbc.OracleDriver");
 ```
 
 2. **커넥션 얻기**
 ```java
-   String url=”jdbc:oracle:thin:@localhost:1521:orcl”; 
-   String id=“scott”;
-   String pass=“tiger”;
+   String url="jdbc:oracle:thin:@localhost:1521:orcl"; 
+   String id="scott";
+   String pass="tiger";
  
    Connection con=DriverManager.getConnection(url, id, pass);
    //Connection은 autocommit이 설정되어있다.
