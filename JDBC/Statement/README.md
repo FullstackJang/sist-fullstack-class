@@ -42,7 +42,7 @@
 ```java
     int count=stmt.executeUpdate( sql );
 ``` 
-## INSERT
+- **INSERT**
 ```java
     //*쿼리문 작성 시에는 ;을 넣지 않는다.
      String sql="insert into dept(deptno, dname, loc) values(99 , ’개발부’ , ’서울’)";
@@ -54,7 +54,7 @@
       }
 ```
 
-## UPDATE
+- **UPDATE**
 ```java
      String sql="update 테이블명 set 컬럼명=값,, where 컬럼명=값,,, ";
      try{
