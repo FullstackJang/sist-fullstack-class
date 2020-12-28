@@ -1,6 +1,14 @@
 # 조회
 > `ResultSet`을 사용
 
+<img src = "https://user-images.githubusercontent.com/69107255/103225875-3a672300-496e-11eb-94a7-46a18902df0e.png">
+
+## ResultSet rs=stmt.executeQuery( sql );
+- rs는 제어권을 갖는다.
+- cursor는 레코드의 유무를 반환하는 포인터이다.
+
+<img src ="https://user-images.githubusercontent.com/69107255/103225914-54086a80-496e-11eb-8ce7-24376fe0e9f2.png">
+
 ```java
     String sql = "select deptno, dname, loc from dept";
 
@@ -22,6 +30,3 @@
 
     }//end while
 ```
-
-cursor는 레코드의 유무를 반환하는 포인터이다.
-

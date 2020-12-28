@@ -27,6 +27,30 @@
     - **연결에 필요한 모든 부분**이 `자바언어로 개발된 드라이버`
     - PL/SQL을 만들 수 있는 기능이 없다.
 
+## DriverManager
+> 로딩된 드라이버를 사용하여, DB연결하고 연결 반환
+
+## Connection
+> DB연결유지, Transaction처리, 쿼리문 생성 객체를 반환하는 일
+
+## Statement
+> 쿼리문을 나중에 생성하여 실행할 때마다 생성하여 처리하는 객체
+
+## PreparedStatement
+> 쿼리문을 미리 생성하여 처리하는 객체
+
+## CallableStatement
+> PRocedure를 호출 객체
+
+## ResultSet
+> 조회결과를 사용하기 위해 Cursor의 제어권을 받는 객체
+- DBMS의 데이터형을 Java의 데이터형으로 변환하는 일
+
+## Cursor
+> Procedure를 호출할 때 SYS_REFCURSOR가 out parameter로 전달되는 CURSOR를 받기 위해 사용하는 객체
+
+## Clob
+> COLB데이터형을 받기 위해 사용하는 객체
 
 # JDBC 연동 순서
 1. 드라이버 로딩
