@@ -1,13 +1,19 @@
 package day1229;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
+import com.sun.net.httpserver.Authenticator.Result;
+
 /**
- * PreparedStatement를 사용하여
+ * PreparedStatement를 사용하여 쿼리문을 실행하는 예
+ * DAO(Data Access Object): DBMS에 대한 작업을 구현하는 클래스
  * 
  * @author owner
  *
@@ -109,15 +115,7 @@ public class PreparedStatementDAO {
 
 	}// inserCpEmp
 
-	public List<CpEmpAllVO> selectAllCpEmp(int empno) throws SQLException {
 
-		return null;
-	}// selectAllCpEmp
-
-	public CpEmpOneVO selectOneCpEmp(int empno) throws SQLException {
-
-		return null;
-	}// selectOneCpEmp
 
 	/**
 	 * 사원번호, 직무, 연봉 ,보너스를 입력받아 사원의 정보를 변경
@@ -194,7 +192,7 @@ public class PreparedStatementDAO {
 			
 		//4. 바인드변수에 값 넣기
 			pstmt.setInt(1, empno);
-		//5. 
+		//5. 쿼리문 수행 후 결과 얻기
 			rowCnt = pstmt.executeUpdate();
 		}finally {
 		//6. 연결 끊기
@@ -208,4 +206,150 @@ public class PreparedStatementDAO {
 		
 		return rowCnt;
 	}// deleteCpEmp
+	
+	public List<CpEmpAllVO> selectAllCpEmp() throws SQLException {
+		List<CpEmpAllVO> list = new ArrayList<CpEmpAllVO>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+		//1. 드라이브 로딩
+		//2. 커넥션 얻기
+			con = getConnection();
+		//3. 쿼리문 생성객체 얻기
+			StringBuilder selectAllCpEmp = new StringBuilder();
+			selectAllCpEmp
+			.append(" SELECT empno, ename, job, sal, comm, TO_CHAR(hiredate,'yyyy-mm-dd day') hiredate_1, hiredate hiredate_2")
+			.append(" FROM cp_emp2");
+
+			pstmt = con.prepareStatement(selectAllCpEmp.toString());
+		//4. 바인드 변수에 값넣기
+	
+		//5. 쿼리문 수행 후 결과 얻기
+
+			rs = pstmt.executeQuery();
+		
+			int empno = 0;
+			int sal = 0;
+			int comm = 0;
+			String ename = "";
+			String job = "";
+			String hiredate_1 = "";
+			Date hiredate_2 = null;
+			 
+			CpEmpAllVO ceaVO = null;
+			while(rs.next()) {//레코드가 존재하는 지?
+				//컬럼의 값을 받기 (조회하는 컬럼의 순서대로 받는게 좋다. 무엇을 빼먹었는지 찾기 쉽다.)
+				empno = rs.getInt("empno");
+				sal = rs.getInt("sal");
+				comm = rs.getInt("comm");
+				
+				ename = rs.getString("ename");
+				job= rs.getString("job");
+				hiredate_1 = rs.getString("hiredate_1");
+				
+				hiredate_2 = rs.getDate("hiredate_2");
+				//컬럼의 값을 하나로 묶기
+				ceaVO = new CpEmpAllVO(empno, ename, job, sal, comm, hiredate_1, hiredate_2);
+				//이전의 값이 사라지지 않도록 저장하기 위해 list를 사용
+				list.add(ceaVO);
+			}//end while
+			
+		}finally {
+			//6. 연결 끊기
+			if(rs != null) {
+				rs.close();
+			}//end if
+			
+			if(pstmt != null) {
+				pstmt.close();
+			}//end if
+			
+			if(con != null) {
+				con.close();
+			}//end if
+		}//end finally
+		
+		return list;
+	}// selectAllCpEmp
+	
+	/**
+	 * 사원번호를 입력받아 해당사원 1명을 조회
+	 * @param empno
+	 * @return
+	 * @throws SQLException
+	 */
+	public CpEmpOneVO selectOneCpEmp(int empno) throws SQLException {
+		CpEmpOneVO ceoVO = null;
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			//1. 드라이브로딩
+			//2. 커넥션 얻기
+				con = getConnection();
+			//3. 
+				StringBuilder selectOneCpEmp = new StringBuilder();
+				selectOneCpEmp
+				.append("	SELECT ename, job, sal, comm, TO_CHAR(hiredate,'mm-dd-yy am hh24') hiredate ")
+				.append("	FROM   cp_emp2	")
+				.append("	WHERE empno= ?	");
+				pstmt = con.prepareStatement(selectOneCpEmp.toString());
+
+			//4. 바인드변수에 값 설정
+				pstmt.setInt(1, empno);
+			//5.
+				rs = pstmt.executeQuery();
+				
+				// 조회결과를 저장할 변수
+				String ename = "";
+				String job = "";
+				String hiredate = "";
+				int sal = 0;
+				int comm = 0;
+				
+				
+				if(rs.next()) { //조회결과 있음
+					ename = rs.getString("ename");
+					job = rs.getString("job");
+					hiredate = rs.getString("hiredate");
+					sal = rs.getInt("sal");
+					comm = rs.getInt("comm");
+				}//end if
+				
+				ceoVO = new CpEmpOneVO(ename,job,sal,comm,hiredate);
+				
+		}finally {
+			//6.연결 끊기
+			
+			if(rs != null) {
+				rs.close();
+			}//end if
+			
+			if(pstmt != null) {
+				pstmt.close();
+			}//end if
+			
+			if(con != null) {
+				con.close();
+			}
+			
+		}//end finally
+		
+		return ceoVO;
+	}// selectOneCpEmp
+	
+	public static void main(String[] args) {
+		try {
+		System.out.println(PreparedStatementDAO.getInstance().selectOneCpEmp(7499));
+		}catch(SQLException e) {
+			
+		}
+		
+	}
+	
+	
 }// class

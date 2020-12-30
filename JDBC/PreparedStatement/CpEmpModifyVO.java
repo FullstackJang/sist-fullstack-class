@@ -10,7 +10,6 @@ public class CpEmpModifyVO {
 	
 	}//CpEmpModifyVO
 	public CpEmpModifyVO(int empno, String job, int sal, int comm) {
-		super();
 		this.empno = empno;
 		this.job = job;
 		this.sal = sal;

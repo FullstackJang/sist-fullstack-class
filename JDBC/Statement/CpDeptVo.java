@@ -42,5 +42,12 @@ public class CpDeptVo {
 		this.loc = loc;
 	}
 
+	@Override
+	public String toString() {
+		return "CpDeptVo [deptno=" + deptno + ", dname=" + dname + ", loc=" + loc + "]";
+	}
+	
+	
+
 	
 }//class

@@ -1,6 +1,9 @@
 package day1229;
 
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.List;
 
 public class UsePreparedStatementDAO {
 	
@@ -65,19 +68,66 @@ public class UsePreparedStatementDAO {
 	}//removeEmp
 	
 	public void searchAllEmp() {
+		PreparedStatementDAO psDAO = PreparedStatementDAO.getInstance();
+		try {
+			List<CpEmpAllVO> list = psDAO.selectAllCpEmp();
+			
+			System.out.println("사원번호\t사원명\t직무\t연봉\t보너스\t입사일1,\t입사일2");
+			System.out.println("============================================");
+			
+			if(list.isEmpty()) {
+				System.out.println("사원정보가 존재하지 않습니다.");
+			}//end if
+			
+			Date hiredate = null; //Oracle에서 Date형으로 얻어지는 날짜를 저장하기 위해
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd EEEE hh:mm:ss");
+					
+			for(CpEmpAllVO ceaVO : list) {
+				
+				//Date를 받는다.
+				hiredate = ceaVO.getHiredate1();
+		
+				System.out.println(ceaVO.getEmpno() + "\t" + 
+				ceaVO.getEname() + "\t" + ceaVO.getJob() + "\t" + ceaVO.getSal()+ "\t" + ceaVO.getComm() +"\t" +ceaVO.getHiredate() + "\t" + sdf.format(hiredate));
+			}//end for
+		} catch (SQLException se) {
+			se.printStackTrace();
+		}//end switch
 		
 	}//searchAllEmp
 	
 	public void searchOneEmp() {
 		
+		PreparedStatementDAO psDAO = PreparedStatementDAO.getInstance();
+		
+		int empno = 1;
+		
+		try {
+			CpEmpOneVO ceoVO = psDAO.selectOneCpEmp(empno);
+			System.out.println(ceoVO);
+			if(ceoVO == null) {
+				System.out.println(empno + "번 사원이 존재하지 않습니다.");
+			}else {
+				System.out.println(empno + "번 사원 정보 조회 결과");
+				System.out.println("사원명 [" + ceoVO.getEname()+ "]");
+				System.out.println("직무 [" + ceoVO.getJob()+ "]");
+				System.out.println("연봉 [" + ceoVO.getSal()+ "]");
+				System.out.println("보너스 [" + ceoVO.getComm()+ "]");
+				System.out.println("입사일 [" + ceoVO.getHiredate()+ "]");
+			}//end if
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}//end catch
 	}//searchOneEmp
 	
 	public static void main(String[] args) {
 		UsePreparedStatementDAO upsDAO = new UsePreparedStatementDAO();
 //		upsDAO.addEmp();
 //		upsDAO.modifyEmp();
-		upsDAO.removeEmp();
-		
+//		upsDAO.removeEmp();
+//		upsDAO.searchAllEmp();
+		upsDAO.searchOneEmp();
 	}//main
 	
 }//class
