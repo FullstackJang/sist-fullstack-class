@@ -15,7 +15,6 @@ public class CpEmpAddVO {
 	
 	}//CpEmpModifyVO
 	public CpEmpAddVO(int empno, String ename, String job, int sal, int comm) {
-		super();
 		this.empno = empno;
 		this.ename = ename;
 		this.job = job;

@@ -126,8 +126,8 @@ public class UsePreparedStatementDAO {
 //		upsDAO.addEmp();
 //		upsDAO.modifyEmp();
 //		upsDAO.removeEmp();
-//		upsDAO.searchAllEmp();
-		upsDAO.searchOneEmp();
+		upsDAO.searchAllEmp();
+//		upsDAO.searchOneEmp();
 	}//main
 	
 }//class

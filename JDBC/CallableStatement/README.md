@@ -147,4 +147,79 @@ select * from user_procedures;
     SELECT * FROM user_procedures;
 ```
 
-# 
+# Procedure를 사용한 조회
+- PL/SQL에서는 쿼리문을 사용할 수 있는데, `SELECT`은 `INTO절이 사용`되며 한행만 조회 가능
+
+**한행 조회 문법**
+- `SELECT`은 `INTO절이 사용`되며 한행만 조회 가능
+```sql
+    SELECT  컬럼명,,,
+    INTO    변수명,,, -- 조회컬럼의 값을 변수에 저장하기 위한 부분 / 컬럼명과 변수명은 1 대 1 대응 되어야한다.
+    FROM    테이블명
+    WHERE   조건
+
+    --한행이 아니면 예외가 발생
+```
+
+**여러행 조회**
+- 조회결과가 0 ~ n행
+- `cursor`를 사용하여 조회
+- PL/SQL에서는 선언,열기,인출,닫기의 생명주기를 가진 커서를 사용하여 여러행 조회
+- procedure에서는 조회결과를 프로시저 내부에서 사용하는 것이 아닌 조회결과를 프로시저외부에서 사용하게 된다.
+- `cursor의 제어권`을 `SYS_REFCURSOR`를 사용하여 반환해야한다.
+- `SYS_REFCURSOR`를 `SQLPlus`에서는 `REFCURSOR`를 사용하여 받고, `Java`에서는 `ResultSet`을 사용하여 받는다.
+
+**REFCURSOR 사용법**
+
+1. out parameter로 커서 선언
+```sql
+    CREATE OR REPLACE PROCEDURE 프로시저명( 변수명 OUT SYS_REFCURSOR)
+```
+
+2. 프로시저안 커서를 열고 쿼리를 실행
+```sql
+    --커서명은 OUT parameter에 변수명이다.
+    OPEN 커서명 FOR SELECT ,,,,
+```
+
+## SQLPlus에서 사용
+1. **바인드 변수 선언**
+```SQL
+    SQL> var cur REFCURSOR
+```
+
+2. **프로시저 호출**
+```SQL
+    SQL> exec 프로시저명( :cur)
+```
+
+3. **출력**
+> 조회결과가 출력
+```sql
+    SQL> print cur
+```
+
+## Java에서 사용
+- java.sql.Types에서 제공하는 `REF_CURSOR`를 사용할 수 없다.
+- oracle.jdbc.OracleTypes에서 제공하는 `OralceTypes.CURSOR`를 사용해야 한다.
+
+**사용법**
+1. 쿼리문 실행 객체 얻기
+```java
+    CallableStatement cstmt = con.prepareCall("{ call 프로시저명 (?) });
+```
+
+2. 바인드 변수 값 할당
+```java
+    cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+```
+
+3. 쿼리 실행
+```java
+    cstmt.execute();
+```
+
+4. out parameter에 설정된 값 받기
+```java
+    ResultSet rs = (ResultSet)cstmt.getObject(1);
+```
