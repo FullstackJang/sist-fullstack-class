@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>합치기</title>
+</head>
+<body>
+	<!-- colspan -->
+	<table border="1" width="100" height="100">
+		<tr>
+			<td colspan="2">1</td>
+			<!-- <td>2</td> -->
+			<td>3</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td colspan="2">5</td>
+			<!-- <td>6</td> -->
+		</tr>
+		<tr>
+			<!--3개의 행을 합치니 셀이 깨진다.-->
+			<td colspan="3">7</td>
+			<!-- <td>8</td>
+			<td>9</td> -->
+		</tr>
+	</table>
+
+	<!-- rowspan -->
+	<table border="1" width="100" height="100">
+		<tr>
+			<td rowspan="2">1</td>
+			<td>2</td>
+			<td rowspan="3">3</td>
+		</tr>
+		<tr>
+			<!-- <td>4</td> -->
+			<td rowspan="2">5</td>
+			<!-- <td>6</td> -->
+		</tr>
+		<tr>
+			<td>7</td>
+			<!-- <td>8</td> -->
+			<!-- <td>9</td> -->
+		</tr>
+	</table>
+
+	<table border="1" width="100" height="100">
+		<tr>
+			<td colspan="2">1</td>
+			<!-- <td>2</td> -->
+			<td rowspan="2">3</td>
+		</tr>
+		<tr>
+			<td rowspan="2">4</td>
+			<td>5</td>
+			<!-- <td>6</td> -->
+		</tr>
+		<tr>
+			<!-- <td>7</td> -->
+			<td colspan="2">8</td>
+			<!-- <td>9</td> -->
+		</tr>
+	</table>
+
+</body>
+</html>

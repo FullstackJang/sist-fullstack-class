@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input</title>
+</head>
+<body>
+	<form name="frm" action="test.jsp" method="get">
+		<fieldset>
+		<legend>input tag 연습</legend>
+			<!-- <label>이름</label><br> <input type="text" name="first_name">
+			<button>검색</button> -->
+			
+			<legend>아이디</legend>
+			<!-- readonly="readonly" 백엔드로 값이 전송된다.  -->
+			<input type="text" name="id" size="10" maxlength="15" value="초기값" readonly="readonly">
+			
+			<!-- disabled="disabled" 백엔드로 값이 전송되지 않습니다.  -->
+			<input type="text" name="id" size="10" maxlength="15" value="초기값" disabled="disabled" >
+			
+			<!-- 커서가 들어가있는 상태  -->
+			<input type="text" name="id" size="10" maxlength="15" placeholder="아이디" autofocus="autofocus">
+			
+		</fieldset>
+	</form>
+</body>
+</html>
