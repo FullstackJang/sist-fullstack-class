@@ -23,6 +23,7 @@
 
 ## hidden
 > 사용자에게 보여지지 않고 Back-end로 값을 전달할 때
+- value는 input에 넣지않고 Javascript에서 컨트롤한다.
 ```html
     <input type="hidden">
 
@@ -114,3 +115,44 @@
 - action="a.jsp", b.jsp, servlet-mapping명: HTML Form Control의 값을 받는 페이지
 - enctype="전송방식" 파라미터전송방식(application/x-www-form-urlencoded)이 기본으로 설정되어 있다.(파일은 업로드 되지 않는다.)
     - 파일 전송 방식: multipart/form-data
+
+
+# HTML5에서 추가된 form Control
+- IE에서는 동작하지 않는다.
+
+```html
+    input type="text"의 형태로 제공된다.
+```
+
+- color
+- date
+- month
+- range
+- tel
+- email
+
+# Media 태그
+- 음악,동영상을 재생하는 태그
+- HTML 4.01에서는 <embed> 태그를 사용하여 음악, 동영상을 하나의 태그로 재생하고, HTML5에서는 <audio>,<video>를 사용하여 음악과 동영상을 구분하여 보여준다.
+
+## **embed**
+- 음악파일은 모든 브라우저가 재생가능하지만, 동영상은 브라우저마다 지원하는 코덱이 다르다.
+```html
+    <embed src="경로" width="너비" height="높이" controller="true|false" autoplay="자동재생여부">
+```
+
+## **viedo**
+```html
+    <!-- 모든 브라우저에서 실행되는게 아니기 때문에 아래와 같은 문구를 넣는다. -->
+    <video src="비디오파일의 경로" width="너이" height="높이" controls="controls" muted="muted" poster="비디오파일이 로딩되기 전까지 보여줄 이미지파일" loop="반복여부">당신의 브라우저는 이 태그를 지원하지 않습니다.</video>
+```
+## 브라우저의 코덱이 비디오파일을 지원하지 않는경우
+```html
+    <source src="a.mp4"> <!-- 다양한 코덱의 파일을 연결-->
+    <source src="a.avi">
+```
+
+## **audio**
+``html
+    <audio src="오디오파일의 경로" autoplay="autoplay" controls="controls" preload="다운로드여부">
+```
