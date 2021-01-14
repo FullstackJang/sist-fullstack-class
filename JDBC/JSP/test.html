@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>문의 게시판 글쓰기</h2>
+	<!-- action에는 서버의 프로그램이름을 정해준다.  -->
+	<form action="result.jsp" method="post"><!-- result한테 제출하겠습니다.라는 뜻  -->
+		<table width="80%">
+			<tr>
+				<td width="80px">이름</td>
+				<td><input type="text" size="30" name="name"></td>
+			</tr>
+		
+			<tr>
+				<td width="80px">비밀번호</td>
+				<td><input type="password" size="30" name="pwd"></td>
+			</tr>
+		
+			<tr>
+				<td width="80px">이메일</td>
+				<td><input type="text" size="30" name="email_1"> @
+				<select name="email_2">
+					<option>선택하세요.</option>
+					<option>gmail.com</option>
+					<option>daum.com</option>
+					<option>naver.com</option>
+					<option>nate.com</option>
+				</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td width="80px">제목</td>
+				<td><input type="text" size="30" name="title"></td>
+			</tr>
+		
+			
+			<tr>
+				<td width="80px">내용</td>
+				<td>
+					<!-- <textarea></textarea> 사이에는 공백이
+					있으면 안된다. 입력칸 안에 공백이나 글씨가 들어갈 수도있따.  -->
+					<textarea rows="10" cols="80" name="content"></textarea>
+				</td>
+			</tr>
+		
+			<tr>
+				<td width="80px">파일첨부</td>
+				<td><input type="text" name="fname"><br>5M이하의 파일만 첨부 가능합니다.
+				</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2">
+				<input type="submit" value="전송">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
