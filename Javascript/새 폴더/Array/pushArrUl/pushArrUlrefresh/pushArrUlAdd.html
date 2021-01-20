@@ -1,0 +1,43 @@
+<!--
+    "추가"를 누르면 사용자의 입력 값을 배열에 추가하고,
+    "출력"을 누르면 배열의 모든 내용을 순서없는 목록으로 result에 출력하도록 합니다.
+    추가를 누르면 배열에 요소를 담고 그리고 바로 리스트를 갱신하도록 코드를 수정해 봅니다. 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input"><button id="btnAddList">추가</button>
+    <hr>
+    <div id="result"></div>
+    <button id="btnListView">목록 출력</button>
+    
+    <script>
+        let arr = [];
+        
+        let listView = function(){
+                let list = `<ul>`;
+            
+                for(i in arr){
+                    list += `<li>${arr[i]}</li>`;
+                }
+            
+                list += `</ul>`;
+            document.getElementById('result').innerHTML = list;
+        }
+        
+        
+        document.getElementById('btnAddList').addEventListener('click',function(){
+                arr.push(document.getElementById('input').value);
+                listView();
+        });
+        
+        document.getElementById('btnListView').addEventListener('click',function(){
+            listView();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="output"></div>
+    <input id="input">
+    <button id="btnAdd">추가</button>
+    <button id="btnView">출력</button>
+    
+    <script>
+        let arr = [];       
+        
+        document.getElementById('btnAdd').addEventListener('click',function(){
+            
+                arr.push(document.getElementById('input').value);
+        });
+        
+        document.getElementById('btnView').addEventListener('click',function(){
+            let r = `<ul>`;
+            for(i of arr){
+                r += `<li>${i}</li>`;
+            }
+           
+            document.getElementById('output').innerHTML = r;
+        });
+        
+    </script>
+</body>
+</html>

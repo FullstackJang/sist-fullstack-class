@@ -1,0 +1,72 @@
+<!-- 사용자가 입력한 값을 배열에 객체를 만들어서 추가해보자-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+       이름 : <input type="text" id="name"><br>
+       나이 : <input type="text" id="age"><br>
+       주소 : <input type="text" id="addr"><br>
+       전화 : <input type="text" id="tel"><br>
+       <button id="btnAdd">등록</button>
+       <button id="btnView">출력</button>
+       <div id="output"></div>
+       
+       <script>
+           let member_list = [];
+           
+           let listMember = function(){
+               let r = `<table border="1">`;
+               
+               r += "<tr><td>이름</td><td>나이</td><td>주소</td><td>전화</td></tr>";
+
+                   
+                   /* member_list의 배열의 요소만큼 */
+                   for(i of member_list){
+                       r += `<tr>`;
+                       /*객체의 속성은 직접 가져올수 없고 객체명을 가져 올수 있다.*/
+                       /*29번 라인에서 member객체를 만들었을 때 name,age,addr,tel이 차례로 j에 들어온다.*/
+                       for(j in i){
+                            r += `<td>${i[j]}</td>`;
+                       }
+                       r += `</tr>`;
+               }
+               r += `</table>`;
+               document.getElementById('output').innerHTML = r;
+           }
+           
+           
+           /* 배열에 추가하기*/
+           document.getElementById('btnAdd').addEventListener('click',function(){
+               
+               let userName = document.getElementById('name').value;
+               let userAge = Number(document.getElementById('age').value); /*input태그의 값은 문자이기 때문에 Number을 통해 형변환*/
+               let userAddr = document.getElementById('addr').value;
+               let userTel = document.getElementById('tel').value;
+               
+               let member = {name:userName,age:userAge,addr:userAddr,tel:userTel}
+               
+               /*배열에다가 객체를 추가하는것*/
+               member_list.push(member);
+               
+               /*input태그에 입력된 내용을 삭제해준다.*/
+               document.getElementById('name').value = "";
+               document.getElementById('age').value = "";
+               document.getElementById('addr').value = "";
+               document.getElementById('tel').value = "";
+               
+               listMember();
+           });
+           
+           /* 배열에 출력하기 */
+           document.getElementById('btnView').addEventListener('click',function(){
+                listMember();
+           });
+    
+       </script>
+</body>
+</html>

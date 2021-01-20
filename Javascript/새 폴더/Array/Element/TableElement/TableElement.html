@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    	<table id="listMember" border='1'>
+    	<tr>
+    	    <td>이름</td>
+    	    <td>나이</td>
+    	    <td>주소</td>
+    	    <td>전화</td>
+        </tr>
+        </table>
+	<hr>
+	이름 : <input type="text" id="name"><br>
+	나이 : <input type="text" id="age"><br>
+	주소 : <input type="text" id="addr"><br>
+	전화 : <input type="text" id="tel"><br>
+	<button id="btnAdd">등록</button>
+
+    <script>
+    
+        document.getElementById('btnAdd').addEventListener('click',function() {
+            let txt_name =  document.createTextNode(document.getElementById('name').value);
+            let txt_age =  document.createTextNode(document.getElementById('age').value);
+            let txt_addr =  document.createTextNode(document.getElementById('addr').value);
+            let txt_tel =  document.createTextNode(document.getElementById('tel').value);
+            
+            let td_name = document.createElement('td');
+            let td_age = document.createElement('td');
+            let td_addr = document.createElement('td');
+            let td_tel = document.createElement('td');
+            
+            td_name.appendChild(txt_name);
+            td_age.appendChild(txt_age);
+            td_addr.appendChild(txt_addr);
+            td_tel.appendChild(txt_tel);
+            
+            let tr = document.createElement('tr');
+            
+            tr.appendChild(td_name);
+            tr.appendChild(td_age);
+            tr.appendChild(td_addr);
+            tr.appendChild(td_tel);
+
+            document.getElementById('listMember').appendChild(tr);
+        });
+    
+    </script>
+    
+</body>
+
+</html>
