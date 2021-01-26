@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        .active{
+            background-color: pink;
+        }    
+    </style>
+</head>
+<body>
+    <table border="1" width="80%">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+                <th>총점</th>
+                <th>평균</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <hr>
+    이름 : <input type="text"><br>
+    국어 : <input type="text"><br>
+    영어 : <input type="text"><br>
+    수학 : <input type="text"><br>
+    <input type="button" value="등록">
+    <input type="button" value="수정">
+    <input type="button" value="삭제">
+</body>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+    <script>
+        
+        let btn_list = $('input[type=button]');
+                            //input타입중에 type이 text인 것을 가져와주세요. 
+        let input_arr; //입력양식중에 속성이 text인것의 배열을 위한 변수
+        let td_list; // 선택한 행의 td목록을 담기 위한 배열 변수
+        let sel_tr; // 눌러진 행을 바라볼 변수
+        
+        //삭제
+        // empty() ==> 자식노드 삭제
+        // remove() ==> 자기자신을 삭제
+        $(btn_list[2]).click(function() {
+            $(sel_tr).remove(); 
+        });
+        
+          //수정
+        $(btn_list[1]).click(function(){			//수정
+            let tot = Number( $(input_arr[1]).val() ) +Number( $(input_arr[2]).val() ) +Number( $(input_arr[3]).val() )
+            let avg = tot/3;
+            for(i=0;i<input_arr.length; i++){
+                $(td_list[i]).text(  $(input_arr[i]).val()  )
+            }
+            $(td_list[4]).text(tot);   
+            $(td_list[5]).text(avg);
+        });
+        
+          //등록
+        $(btn_list[0]).click(function(){
+            let tr = $('<tr></tr>');
+            input_arr = $("input[type=text]");
+
+            $(tr).click(function(){
+                sel_tr = this;
+                $('tr').removeClass('active');
+                $(this).addClass('active');
+                //this==tr 을 기준으로 td들을 찾아라 
+                td_list = $(this).find('td');
+                
+                for(i=0; i < input_arr.length; i++){
+                    $(input_arr[i]).val( $(td_list[i]).text() );    
+                }
+            });
+            
+            
+            let tot = 0;
+		      for(i = 0; i < input_arr.length; i++){
+                let td = $('<td></td>').text( $(input_arr[i]).val() );
+                if(i != 0){
+                    tot += Number($(input_arr[i]).val());
+                }
+                $(tr).append(td);
+            }
+            avg = tot / (input_arr.length-1);
+            
+            $(tr).append($('<td></td>').text(tot));
+            $(tr).append($('<td></td>').text(avg));
+            
+            $('tbody').append(tr);
+            $('input[type=text]').val('');
+        });
+    </script>
+</html>

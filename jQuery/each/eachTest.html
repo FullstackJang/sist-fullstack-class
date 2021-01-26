@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이순신</h1>
+    <h1>유관순</h1>
+    <h1>홍길동</h1>
+    <h1>김유신</h1>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>
+        
+        let color_list = ['red','green','blue','yellow'];
+        
+        $.each($('h1'),function(index){
+            $(this).css('backgroundColor',color_list[index]);
+        });
+        
+        /*
+        $('h1').each(function(index){
+            $(this).css("backgroundColor",color_list[index]);      
+            console.log(this);
+        });*/
+        
+        
+        
+/*                    // h1 요소의 수 만큼 function이 호출이 된다.
+        $('h1').each(function(index, item){ // 시작 index와 요소한개씩을 매개변수로 받아온다.
+                $(item).css('backgroundColor',color_list[index]);
+                //$(this).css("backgroundColor",color_list[index]);            
+        });*/
+    
+    </script>
+</body>
+</html>
