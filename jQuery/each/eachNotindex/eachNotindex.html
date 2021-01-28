@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+  
+    <!-- h1노드의 모든 사람이름을 name_list에 담아본다-->
+      <h1>홍길동</h1>
+      <h1>이순신</h1>
+      <h1>유관순</h1>
+      <h1>김유신</h1>
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script>
+        
+        let name_list = [];
+        
+        $('h1').each(function(){
+            name_list.push($(this).html());
+        })
+        
+        
+        console.log(name_list[0]);
+//        $.each(name_list,function(index,data){
+//            console.log(data[index]);
+//        })
+        
+    </script>
+    
+</body>
+</html>

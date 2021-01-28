@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<button id="btnOK">Ajax통신 하기</button>
+
+	<script>
+	    document.querySelector('#btnOK').addEventListener('click',function(){
+				let request = new XMLHttpRequest();
+				request.open('GET','helloServer.jsp',false);
+				
+				request.send();
+				
+				let data = JSON.parse(request.responseText);
+				
+ 				document.querySelector('#name').innerHTML = data.name;
+ 				document.querySelector('#age').innerHTML = data.age;
+	    });
+	</script>
+	
+	<hr>
+	이름 : <span id="name"></span><br>
+	나이 : <span id="age"></span>
+	
+</body>
+</html>
