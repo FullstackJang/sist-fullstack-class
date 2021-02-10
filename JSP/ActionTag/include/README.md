@@ -1,15 +1,4 @@
 
-## second.jsp
-
-```jsp
-    <body>
-        <h3>이 파일은 second.jsp입니다.</h3>
-        
-        Today is <%= new Date() %>
-    </body>
-
-```
-
 ## first.jsp
 
 ```jsp
@@ -19,8 +8,23 @@
         <p>Java Server  Page</p>
     </body>	
 ```
+## second.jsp
 
- <*jsp:include*> 은 second.jsp의 서블릿을 만들어서 include된다.
+```jsp
+    <body>
+        <h3>이 파일은 second.jsp입니다.</h3>
+        
+        Today is <%= new Date() %>
+    </body>
+```
+
+<img src= "https://user-images.githubusercontent.com/69107255/107136146-f8a1a300-6943-11eb-804e-56fd19cbabce.png">
+
+형관펜 영역은 `second.jsp`의 내용이고 include이후에 내용도 출력이 되는것을 확인 할 수 있다.
+
+<hr>
+
+## <*jsp:include*> 은 second.jsp의 서블릿을 만들어서 include된다.
 
 ```jsp	
 <jsp:include page="second.jsp"/>
