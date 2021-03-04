@@ -54,6 +54,10 @@
 </mapper>
 ```
 
-## 7. 
+## 7. SqlSessionFactory클래스를 가지고 있는 GoodsManager클래스 생성
+
+- SqlSessionFactory는 데이터베이스와의 연결과 SQL의 실행에 대한 모든 것을 가진 가장 중요한 객체이다.
+
 
 <img src ="https://user-images.githubusercontent.com/69107255/109823931-b71ec200-7c7b-11eb-94fd-13dbb0de95f9.png">
+
