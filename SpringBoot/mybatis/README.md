@@ -14,13 +14,13 @@
 
 ## **3. db.properties `properties확장자 파일`을 생성한다.**
 
-    <img src ="https://user-images.githubusercontent.com/69107255/109806293-e297b180-7c67-11eb-8867-0ae557248222.png">
+<img src ="https://user-images.githubusercontent.com/69107255/109806293-e297b180-7c67-11eb-8867-0ae557248222.png">
 
 
 ## **4. 다시 `dbConfig.xml`파일로 돌아와서 위에서 작성한 db.properties파일인 외부 db연결 파일을 가져온다.**
 그 후에 클래스들의 전체 경로와 이름에 대한 별칭을 만들어준다.** 
     
-    <img src = "https://user-images.githubusercontent.com/69107255/109807694-93528080-7c69-11eb-80f8-3df5037e8751.png">
+<img src = "https://user-images.githubusercontent.com/69107255/109807694-93528080-7c69-11eb-80f8-3df5037e8751.png">
 
 ## **5. mapper 설정**
 
