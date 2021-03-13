@@ -5,6 +5,28 @@
 
 <img src ="https://user-images.githubusercontent.com/69107255/109805420-c0e9fa80-7c66-11eb-9966-df297d94605b.png">
 
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <environments default="development">
+    <environment id="development">
+      <transactionManager type="JDBC"/>
+      <dataSource type="POOLED">
+        <property name="driver" value="${driver}"/>
+        <property name="url" value="${url}"/>
+        <property name="username" value="${username}"/>
+        <property name="password" value="${password}"/>
+      </dataSource>
+    </environment>
+  </environments>
+  <mappers>
+    <mapper resource="org/mybatis/example/BlogMapper.xml"/>
+  </mappers>
+</configuration>
+```
  내가 사용할 **DBMS**, **서버url**, **사용자 이름**과 **비밀번호**등을 정해주는 설정파일
     - https://mybatis.org/mybatis-3/ko/getting-started.html
 
@@ -15,6 +37,13 @@
 ## **3. db.properties `properties확장자 파일`을 생성한다.**
 
 <img src ="https://user-images.githubusercontent.com/69107255/109806293-e297b180-7c67-11eb-8867-0ae557248222.png">
+
+```
+  driver=oracle.jdbc.driver.OracleDriver
+  url=jdbc:oracle:thin:@localhost:1521:orcl
+  username=scott
+  password=tiger
+```
 
 
 ## **4. 다시 `dbConfig.xml`파일로 돌아와서 위에서 작성한 db.properties파일인 외부 db연결 파일을 가져온다.**

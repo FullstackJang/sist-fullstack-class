@@ -1,0 +1,12 @@
+<!-- jsp를 사용하기 위한 메이븐 설정 -->
+		
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>jstl</artifactId>
+</dependency>
+
+<dependency>
+	<groupId>org.apache.tomcat.embed</groupId>
+	<artifactId>tomcat-embed-jasper</artifactId>
+	<scope>provided</scope>
+</dependency>
