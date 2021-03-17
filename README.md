@@ -4,8 +4,18 @@
 ----------------------------------------------------
 
 ## 교육기간 
-- 2020.10.21 ~ 2021.03.31
+- 2020.10.21 ~ 2021.04.07
 
-## 로그
-- 2020년 11월 15~ <br>
-국비 동기 인[LeeWoooo](https://github.com/LeeWoooo/SIST_Class)의 repository를 보고 폴더를 정리해야겠다는 생각을 했다. 
+## 목차
+1. JAVA
+2. JDBC
+3. JSP
+4. ORACLE
+5. WEB(HTML)
+6. Javascript
+7. jQuery
+8. SpringBoot
+
+---
+
+# JAVA
