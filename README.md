@@ -49,3 +49,62 @@
 * [Thread](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Java/32.Thread)
 * [MultiChat](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Java/33.MultiChat)
 * [lamda](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Java/34.Lamda)
+
+### JDBC
+
+* [HOMEWORK](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/Homework)
+* [SELECT](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/SELECT)
+* [JDBC-Overall-structure](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/JDBC-Overall-structure)
+* [VO(Value-Object)](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/VO(Value-Object))
+* [Singleton pattern](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/Singletonpattern)
+* [SQLInjection](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/SQLInjection)
+* [Statement](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/Statement)
+* [ResultSetMetaData](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/ResultSetMetaData)
+* [CallalbeStatement](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/CallableStatement)
+* [Clob(Character Large Object)](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/Clob)
+* [Transaciton](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/Transaciton)
+* [PreparedStatement](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/JDBC/PreparedStatement)
+
+### ORACLE
+
+* [HomeWork](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/00.HomeWork)
+* [ORACLE_DBMS](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/01.ORACLE_DBMS)
+* [SQL_command_Type](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/02.SQL_command_Type)
+* [](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/03)
+* [Function1(NULL변환/날짜변환/문자열/수치/조건)](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/04.Function1)
+* [Function2(날짜함수/순위함수/정렬함수/집계함수))](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/05.Function2)
+* [제약사항(Constraints)](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/08.Constraints)
+* [INDEX](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/09.INDEX)
+* [Subquery](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/10.Subquery)
+* [ALTER](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/11.ALTER)
+* [JOIN](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/12.JOIN)
+* [Synonym](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/13.SYNONYM)
+* [VIEW](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/14.VIEW)
+* [SELECT_Subquery](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Oracle/15.SELECT_Subquery)
+
+
+### WEB(HTML)
+
+* [Web Programming](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Web/days1)
+* [HTML 형식](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Web/HTML)
+* [form](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Web/Form)
+* [Tag](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Web/Tag)
+* [Table](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Web/Table)
+* [areaTag](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Web/areaTag)
+* [CSS](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/Web/CSS)
+
+### jQuery
+
+* [reday-method](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/jQuery/reday-method)
+* [filter](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/jQuery/filter)
+* [attr](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/jQuery/attr)
+* [each](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/jQuery/each)
+* [HtmlText](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/jQuery/HtmlText)
+* [css](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/jQuery/css)
+* [Ajax](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/jQuery/Ajax)
+
+### Spring
+* [mybatis환경설정](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/SpringBoot/mybatis%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95)
+* [파일업로드](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/SpringBoot/%ED%8C%8C%EC%9D%BC%EC%97%85%EB%A1%9C%EB%93%9C)
+* [SMS전송](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/SpringBoot/SMS%EC%A0%84%EC%86%A1)
+* [Google_메일보내기](https://github.com/Jangilkyu/sist-fullstack-class/tree/master/SpringBoot/Google_%EB%A9%94%EC%9D%BC%EB%B3%B4%EB%82%B4%EA%B8%B0)
